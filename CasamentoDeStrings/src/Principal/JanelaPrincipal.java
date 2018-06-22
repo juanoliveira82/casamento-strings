@@ -1,17 +1,14 @@
-package trabteoria;
-
+package Principal;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
 /**
  * @author Juan Carlos Cardoso de Oliveira
  */
 public class JanelaPrincipal extends javax.swing.JFrame {
-
     public JanelaPrincipal() {
         initComponents();
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -26,8 +23,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtBusca = new javax.swing.JTextField();
         btnVerificar = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        panelResultado = new javax.swing.JPanel();
         lblResultado = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Casamento de Strings");
@@ -61,32 +59,43 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         btnVerificar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnVerificar.setText("Verificar");
+        btnVerificar.setToolTipText("Clique para realizar a verificação.");
         btnVerificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerificarActionPerformed(evt);
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(250, 250, 250));
+        panelResultado.setBackground(new java.awt.Color(250, 250, 250));
 
-        lblResultado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblResultado.setForeground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelResultadoLayout = new javax.swing.GroupLayout(panelResultado);
+        panelResultado.setLayout(panelResultadoLayout);
+        panelResultadoLayout.setHorizontalGroup(
+            panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelResultadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        panelResultadoLayout.setVerticalGroup(
+            panelResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelResultadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblResultado, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel3.setText("i");
+        jLabel3.setToolTipText("Informação sobre o autor do programa.");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,7 +115,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(25, 25, 25)
                                 .addComponent(lblTitle)))
-                        .addGap(0, 132, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                        .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,13 +127,15 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                             .addComponent(txtBusca)
                             .addComponent(txtPalavra))))
                 .addContainerGap())
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitle)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTitle)
+                    .addComponent(jLabel3))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -141,7 +153,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnVerificar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -155,55 +167,65 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 if(checar[i]==palavra[i]){
                     System.out.println(checar[i] +"="+ palavra[i]);
                 } else {
-                    lblResultado.setText("Não é prefixo");
+                    panelResultado.setBackground(new java.awt.Color(168, 0, 0));
+                    lblResultado.setText(txtBusca.getText()+" não é prefixo de: "+txtPalavra.getText());
                     break;
                 }
                 if(i+1 == checar.length){
-                    lblResultado.setText(txtBusca.getText()+" é prefixo de "+txtPalavra.getText());
+                    panelResultado.setBackground(new java.awt.Color(4, 168, 1));
+                    lblResultado.setText(txtBusca.getText()+" é prefixo de: "+txtPalavra.getText());
                 }
             }
         } else if(rbSufixo.isSelected()){
-            
-            
-            
-            
-            
-            // JUAN = 3
-            // JU = 1
-            
-            
-            
-            for(int i=checar.length+1; i>0; i--){
-                for(int j=palavra.length+1; i>0; i--){
-                    
-                    
-                
-                    if(checar[i]==palavra[i]){
-                        System.out.println(checar[i] +"="+ palavra[i]);
-                    } else {
-                        lblResultado.setText("Não é sufixo");
-                        break;
-                    }
-                    if(i+1 == checar.length){
-                        lblResultado.setText(checar+" é sufixo de "+palavra);
-                    }
-                }
+            int i=checar.length;
+            for(int j=palavra.length; j>0; j--){      
+                if(checar[i-1]==palavra[j-1]){
+                    System.out.println(checar[i-1] +"="+ palavra[j-1]);
+                    i--;
+                } else {
+                    panelResultado.setBackground(new java.awt.Color(168, 0, 0));
+                    lblResultado.setText(txtBusca.getText()+" não é sufixo de: "+txtPalavra.getText());
+                    break;
+                }                
+                if(i==1){
+                    panelResultado.setBackground(new java.awt.Color(4, 168, 1));
+                    lblResultado.setText(txtBusca.getText()+" é sufixo de: "+txtPalavra.getText());
+                }  
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         } else if(rbContem.isSelected()){
-            
+            int i=0, jaAchou=0;
+            for(int j=0; j<palavra.length;){      
+                if(checar[i]==palavra[j]){
+                    System.out.println(checar[i] +"="+ palavra[j]);
+                    jaAchou=1;
+                    if(i+1==checar.length){
+                        panelResultado.setBackground(new java.awt.Color(4, 168, 1));
+                        lblResultado.setText(txtPalavra.getText()+" contém: "+txtBusca.getText());
+                        break;
+                    } 
+                    i++;
+                    j++;
+                } else {
+                    if(jaAchou==1){
+                        panelResultado.setBackground(new java.awt.Color(168, 0, 0));
+                        lblResultado.setText(txtPalavra.getText()+" não contém: "+txtBusca.getText());
+                        break;
+                    } else {
+                        j++;
+                    }
+                } 
+                if(j+1==palavra.length){
+                    panelResultado.setBackground(new java.awt.Color(168, 0, 0));
+                    lblResultado.setText(txtPalavra.getText()+" não contém: "+txtBusca.getText());
+                    break;   
+                }                  
+            }
         }
     }//GEN-LAST:event_btnVerificarActionPerformed
 
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        JOptionPane.showMessageDialog(rootPane, "Autor: Juan Carlos Cardoso de Oliveira", "Informação", HEIGHT);
+    }//GEN-LAST:event_jLabel3MouseClicked
     public static void main(String args[]) throws UnsupportedLookAndFeelException {
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -216,22 +238,21 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException e) {
             // TODO
         }
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new JanelaPrincipal().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btnGrpOpcoes;
     private javax.swing.JButton btnVerificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JPanel panelResultado;
     private javax.swing.JRadioButton rbContem;
     private javax.swing.JRadioButton rbPrefixo;
     private javax.swing.JRadioButton rbSufixo;

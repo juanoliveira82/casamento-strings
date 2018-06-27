@@ -26,6 +26,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         panelResultado = new javax.swing.JPanel();
         lblResultado = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtLog = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Casamento de Strings");
@@ -97,6 +100,15 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        txtLog.setEditable(false);
+        txtLog.setColumns(20);
+        txtLog.setRows(5);
+        txtLog.setToolTipText("Aqui são mostradas todas as comparações realizadas pelo programa.");
+        jScrollPane1.setViewportView(txtLog);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("Comparações:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,17 +116,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rbPrefixo)
-                                    .addComponent(rbContem)
-                                    .addComponent(rbSufixo)
-                                    .addComponent(btnVerificar)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(lblTitle)))
+                        .addGap(25, 25, 25)
+                        .addComponent(lblTitle)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
@@ -125,7 +128,20 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtBusca)
-                            .addComponent(txtPalavra))))
+                            .addComponent(txtPalavra)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnVerificar)
+                            .addComponent(rbPrefixo)
+                            .addComponent(rbContem)
+                            .addComponent(rbSufixo))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addComponent(panelResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -145,14 +161,21 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(rbPrefixo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbPrefixo)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbContem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbSufixo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addComponent(btnVerificar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbContem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbSufixo)
-                .addGap(18, 18, 18)
-                .addComponent(btnVerificar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -162,11 +185,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
         char[] palavra = txtPalavra.getText().toCharArray();
         char[] checar = txtBusca.getText().toCharArray();
+        String log = "";
         if(rbPrefixo.isSelected()){
+            log = (log+"Prefixo: \n");
             for(int i=0; i<checar.length; i++){
                 if(checar[i]==palavra[i]){
-                    System.out.println(checar[i] +"="+ palavra[i]);
+                    log = (log+checar[i]+" = "+palavra[i]+"\n");                    
                 } else {
+                    log = (log+checar[i]+" != "+palavra[i]+"\n");
                     panelResultado.setBackground(new java.awt.Color(168, 0, 0));
                     lblResultado.setText(txtBusca.getText()+" não é prefixo de: "+txtPalavra.getText());
                     break;
@@ -176,13 +202,16 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                     lblResultado.setText(txtBusca.getText()+" é prefixo de: "+txtPalavra.getText());
                 }
             }
+            txtLog.setText(log);
         } else if(rbSufixo.isSelected()){
+            log = (log+"Sufixo: \n");
             int i=checar.length;
             for(int j=palavra.length; j>0; j--){      
                 if(checar[i-1]==palavra[j-1]){
-                    System.out.println(checar[i-1] +"="+ palavra[j-1]);
+                    log = (log+checar[i-1]+" = "+palavra[j-1]+"\n");
                     i--;
                 } else {
+                    log = (log+checar[i-1]+" != "+palavra[j-1]+"\n");
                     panelResultado.setBackground(new java.awt.Color(168, 0, 0));
                     lblResultado.setText(txtBusca.getText()+" não é sufixo de: "+txtPalavra.getText());
                     break;
@@ -192,12 +221,13 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                     lblResultado.setText(txtBusca.getText()+" é sufixo de: "+txtPalavra.getText());
                 }  
             }
+            txtLog.setText(log);
         } else if(rbContem.isSelected()){
-            int i=0, jaAchou=0;
-            for(int j=0; j<palavra.length;){      
+            log = (log+"Contém: \n");
+            int i=0, diferente=0;
+            for(int j=0; j<palavra.length;){
                 if(checar[i]==palavra[j]){
-                    System.out.println(checar[i] +"="+ palavra[j]);
-                    jaAchou=1;
+                    log = (log+checar[i]+" = "+palavra[j]+"\n");
                     if(i+1==checar.length){
                         panelResultado.setBackground(new java.awt.Color(4, 168, 1));
                         lblResultado.setText(txtPalavra.getText()+" contém: "+txtBusca.getText());
@@ -205,26 +235,23 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                     } 
                     i++;
                     j++;
-                } else {
-                    if(jaAchou==1){
-                        panelResultado.setBackground(new java.awt.Color(168, 0, 0));
-                        lblResultado.setText(txtPalavra.getText()+" não contém: "+txtBusca.getText());
-                        break;
-                    } else {
-                        j++;
-                    }
+                } else { 
+                    log = (log+checar[i]+" != "+palavra[j]+"\n");
+                    diferente=1;
+                    j++;
                 } 
-                if(j+1==palavra.length){
+                if(j==palavra.length && diferente==1){
                     panelResultado.setBackground(new java.awt.Color(168, 0, 0));
                     lblResultado.setText(txtPalavra.getText()+" não contém: "+txtBusca.getText());
-                    break;   
-                }                  
+                    break;           
+                } 
             }
+            txtLog.setText(log);
         }
     }//GEN-LAST:event_btnVerificarActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        JOptionPane.showMessageDialog(rootPane, "Autor: Juan Carlos Cardoso de Oliveira", "Informação", HEIGHT);
+        JOptionPane.showMessageDialog(rootPane, "As comparações verificam se os caracteres são maiúsculas ou minúsculas.", "Atenção", HEIGHT);
     }//GEN-LAST:event_jLabel3MouseClicked
     public static void main(String args[]) throws UnsupportedLookAndFeelException {
         try {
@@ -250,6 +277,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel panelResultado;
@@ -257,6 +286,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbPrefixo;
     private javax.swing.JRadioButton rbSufixo;
     private javax.swing.JTextField txtBusca;
+    private javax.swing.JTextArea txtLog;
     private javax.swing.JTextField txtPalavra;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,7 +18,8 @@ A cada comparação de caracter o programa verifica se deve continuar ou não, caso
 
 ## Utilização
 
-Para utilizar a aplicação, você pode realizar o download do código-fonte e compilar o projeto java, então executá-lo. Ou acessar a pasta ["dist"](/CasamentoDeStrings/dist) e executar o arquivo .jar
+Para utilizar a aplicação, você pode realizar o download do código-fonte e compilar o projeto java, então executá-lo. 
+Ou acessar a pasta ["dist"](/CasamentoDeStrings/dist) e executar o arquivo .jar
 
 ## Autor
 

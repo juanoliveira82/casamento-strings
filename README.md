@@ -1,26 +1,28 @@
 ## Casamento de Strings
 
-Implementação de Casamento de Strings com Autômatos Finitos
+ImplementaÃ§Ã£o de Casamento de Strings com AutÃ´matos Finitos
 
-As funções implementadas foram: 
+As funÃ§Ãµes implementadas foram: 
 
-- Subpalavra (contém);
+- Subpalavra (contÃ©m);
 - Prefixo;
 - Sufixo;
 
-Implementação realizada com a linguagem de programação Java na IDE NetBeans.
+ImplementaÃ§Ã£o realizada com a linguagem de programaÃ§Ã£o Java na IDE NetBeans.
 
-O programa recebe uma palavra para ser analisada e um outra palavra para verificação se esta seria um prefixo, sufixo, ou se está contida na palavra de análise.
+O programa recebe uma palavra para ser analisada e um outra palavra para verificaÃ§Ã£o se esta seria um prefixo, sufixo, ou se estÃ¡ contida na palavra de anÃ¡lise.
 
-Ambas as strings recebidas são tratadas como um vetor de caracteres, assim, possibilitando a comparação de suas letras individualmente, como um autômato faria.
+Ambas as strings recebidas sÃ£o tratadas como um vetor de caracteres, assim, possibilitando a comparaÃ§Ã£o de suas letras individualmente, como um autÃ´mato faria.
 
-A cada comparação de caracter o programa verifica se deve continuar ou não, caso não deva continuar, então ele retorna entrada inválida, caso ele passe por todas as comparações com sucesso, a entrada é considerada correta.
+A cada comparaÃ§Ã£o de caracter o programa verifica se deve continuar ou nÃ£o, caso nÃ£o deva continuar, entÃ£o ele retorna entrada invÃ¡lida, caso ele passe por todas as comparaÃ§Ãµes com sucesso, a entrada Ã© considerada correta.
 
-## Utilização
+Trabalho de Teoria da ComputaÃ§Ã£o [UENP]
 
-Para utilizar a aplicação, você pode realizar o download do código-fonte e compilar o projeto java, então executá-lo. 
+## UtilizaÃ§Ã£o
+
+Para utilizar a aplicaÃ§Ã£o, vocÃª pode realizar o download do cÃ³digo-fonte e compilar o projeto java, entÃ£o executÃ¡-lo. 
 Ou acessar a pasta ["dist"](/CasamentoDeStrings/dist) e executar o arquivo .jar
 
 ## Autor
 
-[Juan Carlos Cardoso de Oliveira](https://github.com/juanoliveira82) - Estudante do curso de Ciência da Computação na Universidade Estadual do Norte do Paraná (UENP).
+[Juan Carlos Cardoso de Oliveira](https://github.com/juanoliveira82) - Estudante do curso de CiÃªncia da ComputaÃ§Ã£o na Universidade Estadual do Norte do ParanÃ¡ (UENP).

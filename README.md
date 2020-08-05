@@ -16,7 +16,7 @@ Ambas as strings recebidas são tratadas como um vetor de caracteres, assim, pos
 
 A cada comparação de caracter o programa verifica se deve continuar ou não, caso não deva continuar, então ele retorna entrada inválida, caso ele passe por todas as comparações com sucesso, a entrada é considerada correta.
 
-Trabalho de Teoria da Computação [UENP]
+Trabalho da disciplina de Teoria da Computação [UENP]
 
 ## Utilização
 

@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
   <a href="#-funcionamento">Funcionamento</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
   <a href="#-utilização">Utilização</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-autor">Autor</a>
@@ -11,9 +11,9 @@
 
 <p align="center">
   <br/>
-  <img src=".github/Screenshot-prefixo.png" width="350"/>
-  <img src=".github/Screenshot-contem.png" width="350"/>
-  <img src=".github/Screenshot-sufixo.png" width="350"/>
+  <img src="https://i.imgur.com/i9jFLYY.png" width="350"/>
+  <img src="https://i.imgur.com/UqFN0nj.png" width="350"/>
+  <img src="https://i.imgur.com/ux2Jjl0.png" width="350"/>
   <br/>
 </p>
 
@@ -27,7 +27,7 @@ As funções implementadas foram:
 
 Trabalho da disciplina de Teoria da Computação [UENP]
 
-## :rocket: Tecnologias
+## 🚀 Tecnologias
 
 Implementação realizada com a linguagem de programação [Java](https://www.oracle.com/java/) na [IDE NetBeans](https://netbeans.org/).
 

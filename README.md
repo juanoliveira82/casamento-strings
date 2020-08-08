@@ -10,9 +10,11 @@
 </p>
 
 <p align="center">
-  <img src=".github/Screenshot-prefixo.png" width="310"/>
-  <img src=".github/Screenshot-contem.png" width="310"/>
-  <img src=".github/Screenshot-sufixo.png" width="310"/>
+  <br/>
+  <img src=".github/Screenshot-prefixo.png" width="350"/>
+  <img src=".github/Screenshot-contem.png" width="350"/>
+  <img src=".github/Screenshot-sufixo.png" width="350"/>
+  <br/>
 </p>
 
 ## 💻 Projeto

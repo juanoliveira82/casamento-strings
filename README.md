@@ -47,7 +47,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina o Java (Rele
 
 ### Rodando o programa por linha de comando.
 
-Primeiro faça o download do arquivo "CasamentoDeStrings.jar" da pasta Release do projeto.
+Primeiro faça o download do arquivo "CasamentoDeStrings.jar" do [Release](https://github.com/juanoliveira82/casamento-strings/releases) do projeto.
 
 Para poder executar o projeto na linha de comando, acesse um terminal e vá para a pasta onde foi baixado o arquivo Java, e digite o seguinte:
 ```
